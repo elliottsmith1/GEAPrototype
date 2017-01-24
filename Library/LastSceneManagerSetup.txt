@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Elliott.unity
+- path: D:/GGJ2017/GGJ2017/Assets/Scenes/Main.unity
   isLoaded: 1
   isActive: 1
