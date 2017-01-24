@@ -2,7 +2,7 @@
 using System.Collections;
 
 public class oneWayPlatform : MonoBehaviour {
-    public BoxCollider2D platform;
+    /*public BoxCollider2D platform;
     private bool oneWay = false;
 
 	// Use this for initialization
@@ -24,5 +24,5 @@ public class oneWayPlatform : MonoBehaviour {
     void OnTriggerExit2D(Collider2D col)
     {
         oneWay = false;
-    }
+    }*/
 }
