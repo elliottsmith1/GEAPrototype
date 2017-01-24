@@ -53,7 +53,7 @@ public class EnemyScript : MonoBehaviour {
 
         if (rotating)
         {
-            transform.Rotate(Vector3.forward * 30);
+            transform.Rotate(Vector3.forward * 15);
         }
     }
 
