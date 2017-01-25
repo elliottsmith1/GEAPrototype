@@ -1,20 +1,16 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Ladder : MonoBehaviour
-{
+public class Ladder : MonoBehaviour {
     //private PlayerMovement player;
     public float speed = 6;
-
 	// Use this for initialization
-	void Start ()
-    {
+	void Start () {
         //player = FindObjectOfType<PlayerMovement>();
 	}
 	
 	// Update is called once per frame
-	void Update ()
-    {
+	void Update () {
 	
 	}
 
@@ -36,19 +32,18 @@ public class Ladder : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        if (other.tag=="Player" && Input.GetKey(KeyCode.W))
-        {
-            other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
-        }
-            
-       else if (other.tag == "Player" && Input.GetKey(KeyCode.S))
-        {
-            other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -speed);
+        if (other.tag=="Player" && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)))
+            {
+            other.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, speed);
         }
 
+       else if (other.tag == "Player" && Input.GetKey(KeyCode.S))
+        {
+            other.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, -speed);
+        }
         else
         {
-            other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, 0);
-        }             
+            other.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, 0);
+        }
      }
 }
