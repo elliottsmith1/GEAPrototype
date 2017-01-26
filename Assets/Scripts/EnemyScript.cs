@@ -23,6 +23,15 @@ public class EnemyScript : MonoBehaviour {
 	
 	}
 
+    //function to kill player when script is implemented
+   /* void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            other.GetComponent<PlayerScript>().health = 0;
+        }
+    }*/
+
     void moveEnemy()
     {
         if (!UpDown)
