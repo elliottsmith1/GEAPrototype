@@ -2,10 +2,11 @@
 using System.Collections;
 
 public class Ladder : MonoBehaviour {
-    /*private PlayerMovement player;
+    //private PlayerMovement player;
+    public float speed = 6;
 	// Use this for initialization
 	void Start () {
-        player = FindObjectOfType<PlayerMovement>();
+        //player = FindObjectOfType<PlayerMovement>();
 	}
 	
 	// Update is called once per frame
@@ -13,19 +14,48 @@ public class Ladder : MonoBehaviour {
 	
 	}
 
-    void OnTriggerEnter2D(Collider2D col)
+    //void OnTriggerEnter2D(Collider2D col)
+    //{
+    //    if (col.tag == "Player")
+    //    {
+    //        player.on_ladder = true;
+    //    }
+    //}
+
+    //void OnTriggerExit2D(Collider2D col)
+    //{
+    //    if (col.tag == "Player")
+    //    {
+    //        player.on_ladder = false;
+    //    }
+    //}
+
+    void OnTriggerStay2D(Collider2D other)
     {
-        if (col.tag == "Player")
+        if (other.tag == "Player")
+            {
+            other.GetComponent<Rigidbody2D>().gravityScale = 0;
+            }
+        if (other.tag=="Player" && (Input.GetKey(KeyCode.W) || Input.GetKey(KeyCode.Space)))
+            {
+            other.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, speed);
+        }
+
+       else if (other.tag == "Player" && Input.GetKey(KeyCode.S))
         {
-            player.on_ladder = true;
+            other.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, -speed);
+        }
+        else
+        {
+            other.GetComponent<Rigidbody2D>().velocity = new Vector2 (0, 0);
+        }
+     }
+
+    void OnTriggerExit2D(Collider2D other)
+    {
+        if (other.tag == "Player")
+        {
+            other.GetComponent<Rigidbody2D>().gravityScale = 3;
         }
     }
-
-    void OnTriggerExit2D(Collider2D col)
-    {
-        if (col.tag == "Player")
-        {
-            player.on_ladder = false;
-        }
-    }*/
 }
