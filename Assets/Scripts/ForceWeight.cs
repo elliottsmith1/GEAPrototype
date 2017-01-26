@@ -12,7 +12,7 @@ public class ForceWeight : MonoBehaviour {
         direction = true;
         weightBody = GetComponent<Rigidbody2D>();
 
-        InvokeRepeating("addForce", 0.0f, 0.80f);
+        InvokeRepeating("addForce", 0.0f, 1.0f);
 	}
 	
 	// Update is called once per frame
