@@ -1,4 +1,4 @@
 sceneSetups:
-- path: D:/GGJ2017/GGJ2017/Assets/Scenes/Main.unity
+- path: Assets/Scenes/MainMenu.unity
   isLoaded: 1
   isActive: 1
