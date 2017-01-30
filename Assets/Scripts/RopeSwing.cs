@@ -6,11 +6,10 @@ public class RopeSwing : MonoBehaviour {
 
 
     public bool direction = true;
-    private float startRotation;
+    public float moveSpeed = 40.0f;
 
 	// Use this for initialization
 	void Start () {
-        startRotation = transform.rotation.z;
 
 	
 	}
@@ -18,29 +17,33 @@ public class RopeSwing : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
-        //checkRotation();
+        checkRotation();
 
 
-        //if(direction)
-        //{
-        //  transform.Rotate(Vector3.forward * 1);
-        //}
-        //else
-        //{
-        //    transform.Rotate(Vector3.forward * -1);
-        //}
+        if (direction)
+        {
+            transform.Rotate(Vector3.forward, moveSpeed * Time.deltaTime );
+        }
+        else if(!direction)
+        {
+            transform.Rotate(Vector3.forward, -moveSpeed * Time.deltaTime);
+        }
 
-       // transform.rotation = Quaternion.Euler(0, 0, Mathf.PingPong(Time.time * 80, 90));
-
-
-
-
-
-
+        
 
     }
 
-
+    void checkRotation()
+    {
+        if (transform.rotation.eulerAngles.z <= 65)
+        {
+            direction = true;
+        }
+        else if (transform.rotation.eulerAngles.z >= 120)
+        {
+            direction = false;
+        }
+    }
 
 
 
