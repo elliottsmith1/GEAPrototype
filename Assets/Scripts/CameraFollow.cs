@@ -14,7 +14,7 @@ public class CameraFollow : MonoBehaviour
     {
         Vector3 temp = target.transform.position;
         temp.z = -10;
-        temp.y = 0;
+        temp.y = 4;
         transform.position = temp;
 	}
 }
