@@ -6,19 +6,24 @@ public class oneWayPlatform : MonoBehaviour {
     private bool oneWay = false;
 
 	// Use this for initialization
-	void Start () {
+	void Start ()
+    {
 	
 	}
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
         //enable solid collider whenever bottom trigger isn't entered
         platform.enabled = !oneWay;
 	}
 
     void OnTriggerStay2D(Collider2D col)
     {
-        oneWay = true;
+        if (Input.GetKey(KeyCode.S))
+        {
+            oneWay = true;
+        }
     }
 
     void OnTriggerExit2D(Collider2D col)

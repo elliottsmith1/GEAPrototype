@@ -30,7 +30,7 @@ public class RopeSwing : MonoBehaviour {
         //    transform.Rotate(Vector3.forward * -1);
         //}
 
-        //transform.rotation = Quaternion.Euler(0, 0, Mathf.PingPong(Time.time * 80, 90));
+       // transform.rotation = Quaternion.Euler(0, 0, Mathf.PingPong(Time.time * 80, 90));
 
 
 
