@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Pete.unity
+- path: Assets/Scenes/Elliott.unity
   isLoaded: 1
   isActive: 1
