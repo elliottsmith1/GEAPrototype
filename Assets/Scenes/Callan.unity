@@ -124,6 +124,42 @@ Prefab:
       propertyPath: m_RootOrder
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 147998, guid: 58b2730a9986bbe449e860f8ec64613f, type: 2}
+      propertyPath: m_TagString
+      value: Rope
+      objectReference: {fileID: 0}
+    - target: {fileID: 134984, guid: 58b2730a9986bbe449e860f8ec64613f, type: 2}
+      propertyPath: m_TagString
+      value: Rope
+      objectReference: {fileID: 0}
+    - target: {fileID: 115032, guid: 58b2730a9986bbe449e860f8ec64613f, type: 2}
+      propertyPath: m_TagString
+      value: Rope
+      objectReference: {fileID: 0}
+    - target: {fileID: 187668, guid: 58b2730a9986bbe449e860f8ec64613f, type: 2}
+      propertyPath: m_TagString
+      value: Rope
+      objectReference: {fileID: 0}
+    - target: {fileID: 144884, guid: 58b2730a9986bbe449e860f8ec64613f, type: 2}
+      propertyPath: m_TagString
+      value: Rope
+      objectReference: {fileID: 0}
+    - target: {fileID: 124640, guid: 58b2730a9986bbe449e860f8ec64613f, type: 2}
+      propertyPath: m_TagString
+      value: Rope
+      objectReference: {fileID: 0}
+    - target: {fileID: 176012, guid: 58b2730a9986bbe449e860f8ec64613f, type: 2}
+      propertyPath: m_TagString
+      value: Rope
+      objectReference: {fileID: 0}
+    - target: {fileID: 174898, guid: 58b2730a9986bbe449e860f8ec64613f, type: 2}
+      propertyPath: m_TagString
+      value: Rope
+      objectReference: {fileID: 0}
+    - target: {fileID: 147882, guid: 58b2730a9986bbe449e860f8ec64613f, type: 2}
+      propertyPath: m_TagString
+      value: Rope
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58b2730a9986bbe449e860f8ec64613f, type: 2}
   m_IsPrefabParent: 0
