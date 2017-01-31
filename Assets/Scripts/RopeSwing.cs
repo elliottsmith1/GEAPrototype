@@ -6,10 +6,11 @@ public class RopeSwing : MonoBehaviour {
 
 
     public bool direction = true;
-    public float moveSpeed = 40.0f;
+    private float rotationSpeed = 25;
 
 	// Use this for initialization
 	void Start () {
+
 
 	
 	}
@@ -22,29 +23,32 @@ public class RopeSwing : MonoBehaviour {
 
         if (direction)
         {
-            transform.Rotate(Vector3.forward, moveSpeed * Time.deltaTime );
+            transform.Rotate (Vector3.forward, rotationSpeed * Time.deltaTime);
         }
-        else if(!direction)
+        else
         {
-            transform.Rotate(Vector3.forward, -moveSpeed * Time.deltaTime);
+            transform.Rotate(Vector3.forward, -rotationSpeed * Time.deltaTime);
         }
 
-        
 
     }
+
 
     void checkRotation()
     {
-        if (transform.rotation.eulerAngles.z <= 65)
+
+        if(transform.rotation.eulerAngles.z <= 65)
         {
             direction = true;
         }
-        else if (transform.rotation.eulerAngles.z >= 120)
+        else if(transform.rotation.eulerAngles.z >= 125)
         {
             direction = false;
         }
-    }
 
+
+
+    }
 
 
 
