@@ -28,23 +28,16 @@ public class PlayerSanta : MonoBehaviour {
     [SerializeField]
     private float jumpForce;
 
-    private bool isAlive = true;
-    public Vector3 checkpoint_location; 
-
 
 	// Use this for initialization
 	void Start () {
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
-
-        checkpoint_location = transform.position;
 	}
 	
     void Update()
     {
         HandleInput();
-
-        checkAlive();
     }
 
 
@@ -141,6 +134,7 @@ public class PlayerSanta : MonoBehaviour {
         }
     }
 
+<<<<<<< HEAD
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Enemy")
@@ -172,4 +166,6 @@ public class PlayerSanta : MonoBehaviour {
         }
     }
 
+=======
+>>>>>>> a47bddfdd2537825cf86dca28f2840429b0ea4fa
 }
