@@ -2,7 +2,8 @@
 using UnityEngine.UI;
 using System.Collections;
 
-public class PlayerSanta : MonoBehaviour {
+public class PlayerSanta : MonoBehaviour
+{
 
     private Rigidbody2D myRigidBody;
     private Animator myAnimator;
@@ -33,23 +34,25 @@ public class PlayerSanta : MonoBehaviour {
     private float jumpForce;
 
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start()
+    {
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
 
         score = 0;
         collectibleScore.text = "Collectibles: " + score.ToString();
-	}
-	
+    }
+
     void Update()
     {
         HandleInput();
     }
 
 
-	// Update is called once per frame
-	void FixedUpdate () {
+    // Update is called once per frame
+    void FixedUpdate()
+    {
         float horizontal = Input.GetAxis("Horizontal");
 
         isGrounded = IsGrounded();
@@ -57,13 +60,13 @@ public class PlayerSanta : MonoBehaviour {
         Flip(horizontal);
         HandleLayers();
         resetValues();
-	}
+    }
 
-   
+
 
     private void HandleMovement(float horizontal)
     {
-        if(myRigidBody.velocity.y < 0)
+        if (myRigidBody.velocity.y < 0)
         {
             myAnimator.SetBool("Landing", true);
         }
@@ -72,7 +75,7 @@ public class PlayerSanta : MonoBehaviour {
         {
             myRigidBody.velocity = new Vector2(horizontal * movementSpeed, myRigidBody.velocity.y);
         }
-        if(isGrounded && jump)
+        if (isGrounded && jump)
         {
             isGrounded = false;
             myRigidBody.AddForce(new Vector2(0, jumpForce));
@@ -85,7 +88,7 @@ public class PlayerSanta : MonoBehaviour {
 
     private void HandleInput()
     {
-        if(Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             jump = true;
         }
@@ -93,7 +96,7 @@ public class PlayerSanta : MonoBehaviour {
 
     private void Flip(float horizontal)
     {
-        if((horizontal < 0 && !lookingLeft || horizontal > 0 && lookingLeft) && (isGrounded || jumpControl))
+        if ((horizontal < 0 && !lookingLeft || horizontal > 0 && lookingLeft) && (isGrounded || jumpControl))
         {
             lookingLeft = !lookingLeft;
 
@@ -110,15 +113,15 @@ public class PlayerSanta : MonoBehaviour {
 
     private bool IsGrounded()
     {
-        if(myRigidBody.velocity.y <= 0)
+        if (myRigidBody.velocity.y <= 0)
         {
-            foreach(Transform point in groundPoints)
+            foreach (Transform point in groundPoints)
             {
                 Collider2D[] colliders = Physics2D.OverlapCircleAll(point.position, groundRadius, whatIsGround);
 
                 for (int i = 0; i < colliders.Length; i++)
                 {
-                    if(colliders[i].gameObject != gameObject)
+                    if (colliders[i].gameObject != gameObject)
                     {
                         myAnimator.ResetTrigger("Jump");
                         myAnimator.SetBool("Landing", false);
@@ -126,12 +129,13 @@ public class PlayerSanta : MonoBehaviour {
                     }
                 }
             }
-        }   return false;
-    }   
+        }
+        return false;
+    }
 
     private void HandleLayers()
     {
-        if(!isGrounded)
+        if (!isGrounded)
         {
             myAnimator.SetLayerWeight(1, 1);
         }
@@ -141,7 +145,7 @@ public class PlayerSanta : MonoBehaviour {
         }
     }
 
-<<<<<<< HEAD
+
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -160,11 +164,12 @@ public class PlayerSanta : MonoBehaviour {
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        if(other.tag == "Rope")
+        if (other.tag == "Rope")
         {
             transform.parent = null;
         }
     }
+}
 
     //private void checkAlive()
     //{
@@ -174,6 +179,4 @@ public class PlayerSanta : MonoBehaviour {
     //    }
     //}
 
-=======
->>>>>>> c336d0feb3a43b853a7d0dc760b2f406f8c501e1
-}
+
