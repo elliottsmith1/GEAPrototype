@@ -3,8 +3,8 @@ using System.Collections;
 
 public class MainMenu : MonoBehaviour {
 
-    void loadGame()
+    public void loadGame()
     {
-        Application.LoadLevel("Callan");
+        Application.LoadLevel("Main");
     }
 }
