@@ -1,4 +1,1 @@
-sceneSetups:
-- path: F:/GGJ2017/GGJ2017/Assets/Scenes/Main Menu.unity
-  isLoaded: 1
-  isActive: 1
+sceneSetups: []
