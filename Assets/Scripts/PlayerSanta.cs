@@ -43,6 +43,8 @@ public class PlayerSanta : MonoBehaviour {
     void Update()
     {
         HandleInput();
+
+        checkAlive();
     }
 
 
@@ -144,6 +146,14 @@ public class PlayerSanta : MonoBehaviour {
         if (other.tag == "Enemy")
         {
             isAlive = false;
+        }
+    }
+
+    private void checkAlive()
+    {
+        if (!isAlive)
+        {
+            transform.position = checkpoint_location;
         }
     }
 
