@@ -1,7 +1,13 @@
 fileFormatVersion: 2
+<<<<<<< HEAD:Assets/Sprites/Character.meta
 guid: 480a7e8568196c942b26dde6bc7ad5a2
 folderAsset: yes
 timeCreated: 1485857775
+=======
+guid: 11b11dbae4e53f24e9f6021725789829
+folderAsset: yes
+timeCreated: 1485857366
+>>>>>>> 67dedbb6786356110ca9a351bb4dca9a245dc623:Assets/Sprites/Character.meta
 licenseType: Pro
 DefaultImporter:
   userData: 
