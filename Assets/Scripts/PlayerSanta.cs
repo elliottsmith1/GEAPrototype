@@ -1,10 +1,14 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class PlayerSanta : MonoBehaviour {
 
     private Rigidbody2D myRigidBody;
     private Animator myAnimator;
+    public Text collectibleScore;
+    private int score;
+
 
     [SerializeField]
     private float movementSpeed = 10;
@@ -33,6 +37,9 @@ public class PlayerSanta : MonoBehaviour {
 	void Start () {
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
+
+        score = 0;
+        collectibleScore.text = "Collectibles: " + score.ToString();
 	}
 	
     void Update()
@@ -134,12 +141,12 @@ public class PlayerSanta : MonoBehaviour {
         }
     }
 
-<<<<<<< HEAD
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Enemy")
         {
-            isAlive = false;
+            //isAlive = false;
         }
 
 
@@ -158,14 +165,12 @@ public class PlayerSanta : MonoBehaviour {
         }
     }
 
-    private void checkAlive()
-    {
-        if (!isAlive)
-        {
-            transform.position = checkpoint_location;
-        }
-    }
+    //private void checkAlive()
+    //{
+    //    if (!isAlive)
+    //    {
+    //        transform.position = checkpoint_location;
+    //    }
+    //}
 
-=======
->>>>>>> a47bddfdd2537825cf86dca28f2840429b0ea4fa
 }
