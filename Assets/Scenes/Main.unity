@@ -486,6 +486,84 @@ Transform:
   - {fileID: 2105671550}
   m_Father: {fileID: 0}
   m_RootOrder: 2
+--- !u!1 &93779501 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 151274, guid: 3a6ab0333f57eeb41b16180613dd5f17, type: 2}
+  m_PrefabInternal: {fileID: 1605277538}
+--- !u!82 &93779510
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 93779501}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: c9fe40a033d5c974ab6da8f4097ed19c, type: 3}
+  m_PlayOnAwake: 0
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &102222038
 GameObject:
   m_ObjectHideFlags: 0
@@ -1593,6 +1671,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  grey: {fileID: 0}
+  green: {fileID: 0}
+  blue: {fileID: 0}
+  red: {fileID: 0}
+  yellow: {fileID: 0}
 --- !u!58 &525721143
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -4935,6 +5018,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  grey: {fileID: 0}
+  green: {fileID: 0}
+  blue: {fileID: 0}
+  red: {fileID: 0}
+  yellow: {fileID: 0}
 --- !u!58 &1472502193
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -29,6 +29,7 @@ public class Collectable : MonoBehaviour {
     {
         if (other.tag == "Collectable")
         {
+            GetComponent<AudioSource>().Play();
             other.gameObject.SetActive(false);
             AddScore(1);
         }
