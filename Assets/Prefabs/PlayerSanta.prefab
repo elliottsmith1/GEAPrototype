@@ -41,8 +41,9 @@ GameObject:
   - 212: {fileID: 21274582}
   - 95: {fileID: 9587658}
   - 50: {fileID: 5052892}
-  - 61: {fileID: 6183702}
   - 114: {fileID: 11420496}
+  - 58: {fileID: 5854772}
+  - 60: {fileID: 6061006}
   m_Layer: 0
   m_Name: PlayerSanta
   m_TagString: Player
@@ -72,7 +73,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 151274}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.222137, y: -1.7738659, z: 0}
+  m_LocalPosition: {x: -4.71, y: -2.62, z: -0.2}
   m_LocalScale: {x: 0.2, y: 0.2, z: 1}
   m_Children:
   - {fileID: 433788}
@@ -127,14 +128,14 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 2
+  m_GravityScale: 3
   m_IsKinematic: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
+  m_Interpolate: 1
+  m_SleepingMode: 0
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!61 &6183702
-BoxCollider2D:
+--- !u!58 &5854772
+CircleCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -144,9 +145,36 @@ BoxCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_Offset: {x: -0.92, y: 0.29}
+  m_Offset: {x: -0.75, y: -1.1}
   serializedVersion: 2
-  m_Size: {x: 3.33, y: 5.42}
+  m_Radius: 1.5
+--- !u!60 &6061006
+PolygonCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 151274}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  m_Points:
+    m_Paths:
+    - - {x: -0.024266243, y: -2.3299158}
+      - {x: 0.60385466, y: -1.0127234}
+      - {x: 0.6751585, y: 0.18845439}
+      - {x: 0.39, y: 1.515}
+      - {x: 0.17, y: 2.215}
+      - {x: -0.2537799, y: 2.623936}
+      - {x: -1.0204363, y: 2.7825546}
+      - {x: -1.8790817, y: 2.3335028}
+      - {x: -2.4534369, y: 0.9574187}
+      - {x: -2.4199998, y: -0.555}
+      - {x: -2.4199998, y: -0.645}
+      - {x: -2.1471834, y: -1.4770627}
+      - {x: -1.4063382, y: -2.3316836}
 --- !u!95 &9587658
 Animator:
   serializedVersion: 3
@@ -156,7 +184,7 @@ Animator:
   m_GameObject: {fileID: 151274}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 58ef5111095bbca4aba72fb4a661272a, type: 2}
+  m_Controller: {fileID: 9100000, guid: a93818b3c4f96734699f15a48ef698a7, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -175,17 +203,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3288a08fea3e85c47a6f8bc3c436e089, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSpeed: 10
+  collectibleScore: {fileID: 0}
+  movementSpeed: 5
   groundPoints:
   - {fileID: 433788}
   - {fileID: 486502}
   - {fileID: 471138}
-  groundRadius: 0.2
+  groundRadius: 0.1
   whatIsGround:
     serializedVersion: 2
     m_Bits: 4294967295
-  jumpControl: 0
-  jumpForce: 500
+  jumpControl: 1
+  jumpForce: 600
 --- !u!212 &21274582
 SpriteRenderer:
   m_ObjectHideFlags: 1
