@@ -3,20 +3,39 @@ using System.Collections;
 
 public class Collectable : MonoBehaviour {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
+    public GUIText scoreText;
+    private int score;
+
+    // Use this for initialization
+    void Start ()
+    {
+        score = 10;
+        UpdateScore();
+    }
 	
 	// Update is called once per frame
-	void Update () {
+	void Update ()
+    {
 	
 	}
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Collectable")
         {
-            gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
+            AddScore(1);
         }
+       
+    }
+
+    public void AddScore(int newScoreValue)
+    {
+        score -= newScoreValue;
+        UpdateScore();
+    }
+
+    void UpdateScore()
+    {
+        scoreText.text = "Gems to oollect: " + score;
     }
 }
