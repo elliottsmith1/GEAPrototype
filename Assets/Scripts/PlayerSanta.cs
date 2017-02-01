@@ -6,7 +6,7 @@ public class PlayerSanta : MonoBehaviour {
 
     private Rigidbody2D myRigidBody;
     private Animator myAnimator;
-    public Text collectibleScore;
+    //public Text collectibleScore;
     private int score;
     public bool isAlive = true;
     public Vector3 checkpoint_location;
@@ -42,8 +42,8 @@ public class PlayerSanta : MonoBehaviour {
 
         checkpoint_location = transform.position;
 
-        score = 0;
-        collectibleScore.text = "Collectibles: " + score.ToString();
+        //score = 0;
+        //collectibleScore.text = "Collectibles: " + score.ToString();
 	}
 	
     void Update()

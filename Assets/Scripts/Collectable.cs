@@ -20,9 +20,9 @@ public class Collectable : MonoBehaviour {
 	}
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Collectable")
         {
-            gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
             AddScore(1);
         }
     }
