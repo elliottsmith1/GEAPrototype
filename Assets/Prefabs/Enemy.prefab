@@ -14,7 +14,7 @@ GameObject:
   - 114: {fileID: 11409634}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -70,12 +70,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 155848}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e53220611276ade41acc5f57454a5cf1, type: 3}
+  m_Script: {fileID: 11500000, guid: bf66021be8f57d94bb200b11f2c91a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  positionOne: 3
-  positionTwo: -2
-  UpDown: 1
+  positionOne: 0
+  positionTwo: 0
+  UpDown: 0
+  rotating: 0
+  speed: 1
 --- !u!212 &21267686
 SpriteRenderer:
   m_ObjectHideFlags: 1

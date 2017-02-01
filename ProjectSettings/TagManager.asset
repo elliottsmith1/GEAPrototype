@@ -7,6 +7,8 @@ TagManager:
   - Rope
   - Tile
   - Water
+  - PickUp
+  - Enemy
   layers:
   - Default
   - TransparentFX
