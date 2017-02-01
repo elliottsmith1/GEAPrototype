@@ -10,6 +10,7 @@ public class PlayerSanta : MonoBehaviour {
     private int score;
     public bool isAlive = true;
     public Vector3 checkpoint_location;
+    private int lives = 5;
 
     [SerializeField]
     private float movementSpeed = 10f;
@@ -148,6 +149,7 @@ public class PlayerSanta : MonoBehaviour {
         if (other.tag == "Enemy")
         {
             isAlive = false;
+            lives -= 1;
         }
     }
 
@@ -156,6 +158,11 @@ public class PlayerSanta : MonoBehaviour {
     {
         if (!isAlive)
         {
+            if (lives < 1)
+            {
+                Application.LoadLevel("GameOver");
+            }
+
             transform.position = checkpoint_location;
             isAlive = true;
         }
