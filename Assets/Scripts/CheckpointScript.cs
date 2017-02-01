@@ -17,7 +17,7 @@ public class CheckpointScript : MonoBehaviour {
     {
         if (other.tag == "Player")
         {
-           // other.GetComponent<PlayerSanta>().checkpoint_location = transform.position;
+           other.GetComponent<PlayerSanta>().checkpoint_location = transform.position;
         }
     }
 }

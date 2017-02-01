@@ -8,7 +8,8 @@ public class PlayerSanta : MonoBehaviour {
     private Animator myAnimator;
     public Text collectibleScore;
     private int score;
-
+    public bool isAlive = true;
+    public Vector3 checkpoint_location;
 
     [SerializeField]
     private float movementSpeed = 10f;
@@ -38,13 +39,15 @@ public class PlayerSanta : MonoBehaviour {
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
 
+        checkpoint_location = transform.position;
+
         score = 0;
         collectibleScore.text = "Collectibles: " + score.ToString();
 	}
 	
     void Update()
     {
-        HandleInput();
+        HandleInput();        
     }
 
 
@@ -52,14 +55,13 @@ public class PlayerSanta : MonoBehaviour {
 	void FixedUpdate () {
         float horizontal = Input.GetAxis("Horizontal");
 
+        checkAlive();
         isGrounded = IsGrounded();
         HandleMovement(horizontal);
         Flip(horizontal);
         HandleLayers();
         resetValues();
-	}
-
-   
+	}   
 
     private void HandleMovement(float horizontal)
     {
@@ -141,32 +143,22 @@ public class PlayerSanta : MonoBehaviour {
         }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> d3612bac42d0b5872b3a637f26a3e4f4c10249c2
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Enemy")
         {
-            //isAlive = false;
+            isAlive = false;
         }
-
     }
 
 
-    //private void checkAlive()
-    //{
-    //    if (!isAlive)
-    //    {
-    //        transform.position = checkpoint_location;
-    //    }
-    //}
+    private void checkAlive()
+    {
+        if (!isAlive)
+        {
+            transform.position = checkpoint_location;
+            isAlive = true;
+        }
+    }
 
-<<<<<<< HEAD
-=======
->>>>>>> a47bddfdd2537825cf86dca28f2840429b0ea4fa
-=======
->>>>>>> d3612bac42d0b5872b3a637f26a3e4f4c10249c2
 }
