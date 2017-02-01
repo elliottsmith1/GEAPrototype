@@ -22,10 +22,9 @@ public class Collectable : MonoBehaviour {
     {
         if (other.tag == "Collectable")
         {
-            other.gameObject.SetActive(false);
+            gameObject.SetActive(false);
             AddScore(1);
         }
-       
     }
 
     public void AddScore(int newScoreValue)
