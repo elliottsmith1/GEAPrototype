@@ -20,7 +20,7 @@ public class Water : MonoBehaviour {
     {
         if (other.tag == "Player" && Input.GetKey(KeyCode.Space))
         {
-            other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed);
+            other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, speed - 1);
         }
 
         else if (other.tag == "Player" && Input.GetKey(KeyCode.S))
@@ -32,12 +32,14 @@ public class Water : MonoBehaviour {
         {
             other.GetComponent<Rigidbody2D>().velocity = new Vector2(0, -1);
         }
+    }
 
-        if (other.tag == "Water")
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.tag == "Player")
         {
-            //isInWater = true;
-            GetComponent<Rigidbody2D>().drag = 50f;
-            GetComponent<Rigidbody2D>().angularDrag = 50f;
+            other.GetComponent<Rigidbody2D>().drag = 50f;
+            other.GetComponent<Rigidbody2D>().angularDrag = 50f;
         }
     }
 
@@ -45,8 +47,8 @@ public class Water : MonoBehaviour {
     {
         if (other.tag == "Water")
         {
-            GetComponent<Rigidbody2D>().drag = 0f;
-            GetComponent<Rigidbody2D>().angularDrag = 0.5f;
+            other.GetComponent<Rigidbody2D>().drag = 0f;
+            other.GetComponent<Rigidbody2D>().angularDrag = 0.5f;
         }
     }
 }
