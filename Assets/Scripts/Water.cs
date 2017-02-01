@@ -45,7 +45,7 @@ public class Water : MonoBehaviour {
 
     void OnTriggerExit2D(Collider2D other)
     {
-        if (other.tag == "Water")
+        if (other.tag == "Player")
         {
             other.GetComponent<Rigidbody2D>().drag = 0f;
             other.GetComponent<Rigidbody2D>().angularDrag = 0.5f;

@@ -153,21 +153,8 @@ public class PlayerSanta : MonoBehaviour {
             //isAlive = false;
         }
 
-
-        if (other.tag == "Rope")
-        {
-            transform.parent = other.transform;
-        }
-
     }
 
-    private void OnTriggerExit2D(Collider2D other)
-    {
-        if(other.tag == "Rope")
-        {
-            transform.parent = null;
-        }
-    } 
 
     //private void checkAlive()
     //{
