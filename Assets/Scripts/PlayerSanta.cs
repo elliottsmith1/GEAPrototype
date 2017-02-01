@@ -11,7 +11,7 @@ public class PlayerSanta : MonoBehaviour {
 
 
     [SerializeField]
-    private float movementSpeed = 10;
+    private float movementSpeed = 10f;
 
     private bool lookingLeft;
 
@@ -141,7 +141,6 @@ public class PlayerSanta : MonoBehaviour {
         }
     }
 
-<<<<<<< HEAD
 
     private void OnTriggerEnter2D(Collider2D other)
     {
@@ -164,7 +163,7 @@ public class PlayerSanta : MonoBehaviour {
         {
             transform.parent = null;
         }
-    }
+    } 
 
     //private void checkAlive()
     //{
@@ -174,6 +173,4 @@ public class PlayerSanta : MonoBehaviour {
     //    }
     //}
 
-=======
->>>>>>> c336d0feb3a43b853a7d0dc760b2f406f8c501e1
 }
