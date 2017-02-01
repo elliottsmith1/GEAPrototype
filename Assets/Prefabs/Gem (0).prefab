@@ -10,10 +10,10 @@ GameObject:
   - 4: {fileID: 443376}
   - 212: {fileID: 21280932}
   - 58: {fileID: 5822452}
-  - 114: {fileID: 11454580}
+  - 114: {fileID: 11402698}
   m_Layer: 0
   m_Name: Gem (0)
-  m_TagString: Untagged
+  m_TagString: Collectable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,7 +44,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
   m_Radius: 0.5
---- !u!114 &11454580
+--- !u!114 &11402698
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -52,10 +52,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 192884}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffdd237239d3ec941b34a71d73553455, type: 3}
+  m_Script: {fileID: 11500000, guid: dc3f557ae6e36994f8587b050da9c4ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scoreText: {fileID: 0}
   grey: {fileID: 21300000, guid: 3eaaea4926392174aababcfc4203bc82, type: 3}
   green: {fileID: 21300002, guid: 3eaaea4926392174aababcfc4203bc82, type: 3}
   blue: {fileID: 21300004, guid: 3eaaea4926392174aababcfc4203bc82, type: 3}
