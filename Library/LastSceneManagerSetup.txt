@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/Main.unity
+- path: //nstu-uwe01.campus.ads.uwe.ac.uk/users1$/cjp2-patay/Windows/Downloads/GEAPrototype-bkup/GEAPrototype-bkup/Assets/Scenes/Pete.unity
   isLoaded: 1
   isActive: 1

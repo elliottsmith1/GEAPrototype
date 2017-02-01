@@ -9,7 +9,7 @@ public class Collectable : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        score = 0;
+        score = 10;
         UpdateScore();
     }
 	
@@ -20,21 +20,22 @@ public class Collectable : MonoBehaviour {
 	}
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.tag == "Player")
+        if (other.tag == "Collectable")
         {
-            gameObject.SetActive(false);
+            other.gameObject.SetActive(false);
+            AddScore(1);
         }
-        AddScore(1);
+       
     }
 
     public void AddScore(int newScoreValue)
     {
-        score += newScoreValue;
+        score -= newScoreValue;
         UpdateScore();
     }
 
     void UpdateScore()
     {
-        scoreText.text = "Score: " + score;
+        scoreText.text = "Gems to oollect: " + score;
     }
 }
