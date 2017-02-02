@@ -11,6 +11,8 @@ public class PlayerSanta : MonoBehaviour {
     public bool isAlive = true;
     public Vector3 checkpoint_location;
     private int lives = 5;
+    public AudioClip hit;
+    AudioSource source;
 
     [SerializeField]
     private float movementSpeed = 10f;
@@ -48,6 +50,7 @@ public class PlayerSanta : MonoBehaviour {
 	
     void Update()
     {
+        source = GetComponent<AudioSource>();
         HandleInput();        
     }
 
@@ -148,6 +151,7 @@ public class PlayerSanta : MonoBehaviour {
     {
         if (other.tag == "Enemy")
         {
+            source.PlayOneShot(hit, .5f);
             isAlive = false;
             lives -= 1;
         }
