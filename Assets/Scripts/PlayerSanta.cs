@@ -7,10 +7,11 @@ public class PlayerSanta : MonoBehaviour {
     private Rigidbody2D myRigidBody;
     private Animator myAnimator;
     //public Text collectibleScore;
+    public GUIText livescount;
     private int score;
     public bool isAlive = true;
     public Vector3 checkpoint_location;
-    private int lives = 5;
+    private int lives;
     public AudioClip hit;
     AudioSource source;
 
@@ -39,6 +40,9 @@ public class PlayerSanta : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
+        lives = 5;
+        UpdateLives();
+
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
 
@@ -151,13 +155,22 @@ public class PlayerSanta : MonoBehaviour {
     {
         if (other.tag == "Enemy")
         {
+
             source.PlayOneShot(hit, .5f);
             isAlive = false;
-            lives -= 1;
+            TakeLife(1);
         }
     }
 
-
+   public void TakeLife(int newLivesValue)
+    {
+        lives -= newLivesValue;
+        UpdateLives();
+    }
+    void UpdateLives()
+    {
+        livescount.text = "Lives left: " + lives;
+    }
     private void checkAlive()
     {
         if (!isAlive)
