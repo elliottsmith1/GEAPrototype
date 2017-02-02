@@ -4,6 +4,8 @@ using System.Collections;
 public class BulletScript : MonoBehaviour
 {
 
+    public bool right = true;
+
     private Vector3 spawnLocation;
 
     // Use this for initialization
@@ -20,7 +22,15 @@ public class BulletScript : MonoBehaviour
 
     void moveBullet()
     {
-        transform.position += Vector3.left * 5 * Time.deltaTime;
+        if (right)
+        {
+            transform.position += Vector3.left * -5 * Time.deltaTime;
+        }
+
+        else
+        {
+            transform.position += Vector3.left * 5 * Time.deltaTime;
+        }
     }
 
     void OnTriggerEnter2D()
