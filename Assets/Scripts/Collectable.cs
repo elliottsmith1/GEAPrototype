@@ -5,7 +5,7 @@ public class Collectable : MonoBehaviour {
 
     public GUIText scoreText;
     private int score;
-
+    
     // Use this for initialization
     void Start ()
     {
@@ -22,10 +22,10 @@ public class Collectable : MonoBehaviour {
     {
         if (other.tag == "Collectable")
         {
+            GetComponent<AudioSource>().Play();
             other.gameObject.SetActive(false);
             AddScore(1);
         }
-       
     }
 
     public void AddScore(int newScoreValue)
@@ -37,5 +37,5 @@ public class Collectable : MonoBehaviour {
     void UpdateScore()
     {
         scoreText.text = "Gems to oollect: " + score;
-    }
+    }    
 }

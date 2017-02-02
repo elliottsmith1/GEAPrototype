@@ -6,9 +6,13 @@ public class PlayerSanta : MonoBehaviour {
 
     private Rigidbody2D myRigidBody;
     private Animator myAnimator;
-    public Text collectibleScore;
+    //public Text collectibleScore;
     private int score;
-
+    public bool isAlive = true;
+    public Vector3 checkpoint_location;
+    private int lives = 5;
+    public AudioClip hit;
+    AudioSource source;
 
     [SerializeField]
     private float movementSpeed = 10f;
@@ -38,13 +42,16 @@ public class PlayerSanta : MonoBehaviour {
         myRigidBody = GetComponent<Rigidbody2D>();
         myAnimator = GetComponent<Animator>();
 
-        score = 0;
-        collectibleScore.text = "Collectibles: " + score.ToString();
+        checkpoint_location = transform.position;
+
+        //score = 0;
+        //collectibleScore.text = "Collectibles: " + score.ToString();
 	}
 	
     void Update()
     {
-        HandleInput();
+        source = GetComponent<AudioSource>();
+        HandleInput();        
     }
 
 
@@ -52,14 +59,13 @@ public class PlayerSanta : MonoBehaviour {
 	void FixedUpdate () {
         float horizontal = Input.GetAxis("Horizontal");
 
+        checkAlive();
         isGrounded = IsGrounded();
         HandleMovement(horizontal);
         Flip(horizontal);
         HandleLayers();
         resetValues();
-	}
-
-   
+	}   
 
     private void HandleMovement(float horizontal)
     {
@@ -141,32 +147,29 @@ public class PlayerSanta : MonoBehaviour {
         }
     }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-
->>>>>>> d3612bac42d0b5872b3a637f26a3e4f4c10249c2
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.tag == "Enemy")
         {
-            //isAlive = false;
+            source.PlayOneShot(hit, .5f);
+            isAlive = false;
+            lives -= 1;
         }
-
     }
 
 
-    //private void checkAlive()
-    //{
-    //    if (!isAlive)
-    //    {
-    //        transform.position = checkpoint_location;
-    //    }
-    //}
+    private void checkAlive()
+    {
+        if (!isAlive)
+        {
+            if (lives < 1)
+            {
+                Application.LoadLevel("GameOver");
+            }
 
-<<<<<<< HEAD
-=======
->>>>>>> a47bddfdd2537825cf86dca28f2840429b0ea4fa
-=======
->>>>>>> d3612bac42d0b5872b3a637f26a3e4f4c10249c2
+            transform.position = checkpoint_location;
+            isAlive = true;
+        }
+    }
+
 }

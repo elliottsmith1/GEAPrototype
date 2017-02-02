@@ -26,5 +26,6 @@ public class BulletScript : MonoBehaviour
     void OnTriggerEnter2D()
     {
         transform.position = spawnLocation;
+        GetComponent<AudioSource>().Play();
     }
 }
