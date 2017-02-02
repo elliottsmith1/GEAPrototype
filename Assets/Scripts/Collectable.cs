@@ -9,7 +9,7 @@ public class Collectable : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
-        score = 10;
+        score = 20;
         UpdateScore();
     }
 	
