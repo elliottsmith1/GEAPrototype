@@ -8,4 +8,8 @@ public class MainMenu : MonoBehaviour {
         Application.LoadLevel("Main");
     }
 
+    public void loadMenu()
+    {
+        Application.LoadLevel("MainMenu");
+    }
 }

@@ -1,8 +1,4 @@
-<<<<<<< HEAD
-sceneSetups: []
-=======
 sceneSetups:
-- path: //nstu-uwe01.campus.ads.uwe.ac.uk/users1$/cjp2-patay/Windows/Downloads/GEAPrototype-bkup/GEAPrototype-bkup/Assets/Scenes/Pete.unity
+- path: Assets/Scenes/GameOver.unity
   isLoaded: 1
   isActive: 1
->>>>>>> d3612bac42d0b5872b3a637f26a3e4f4c10249c2
